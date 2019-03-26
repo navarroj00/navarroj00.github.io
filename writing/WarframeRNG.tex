@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Random Number Generation in Warframe}
+\author{Jordan M. Navarro}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Disclaimer}
+
+This document is maintained for educational purposes only. Any material on this document may not be reproduced, retransmitted, or redisplayed other than for personal or educational use.
+
+\section{Introduction}
+
+Random number generation (RNG) is the generation of a sequence of numbers or symbols that cannot be reasonably predicted better than by a random chance, usually through a hardware-based random number generator (HRNG). Warframe uses Donald Knuth's variation of a linear congruential generator (LCG) as a base for its random number generation algorithm and scales from rarity weights assigned by Digital Extremes that influence the drop chances of items in \texttt{DropTables} and \texttt{MissionDecks}. The recursive aspect of the algorithm only applies to missions in which players receive rewards over time, such as Defense and Survival. Other mission types simply use the process explained below.
+
+\section{Rarity Weights}
+
+Warframe uses four (4) rarity weights in its random number generation algorithm. These weights are uniform across \texttt{DropTables} and \texttt{MissionDecks}, with the exception of any table that uses \texttt{FixedWeights} (weights which are of fixed values and may deviate from the standard).
+
+\begin{center}
+	\begin{tabular}{|l||l|l|}
+		\hline
+		Rarity    & Weight & Percentage \\
+		\hline
+		COMMON    & 0.755  & 75.50\%    \\
+		UNCOMMON  & 0.220  & 22.00\%    \\
+		RARE      & 0.020  & 2.00\%     \\
+		LEGENDARY & 0.005  & 0.50\%     \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Formulae}
+
+The independent drop chance of an item can be computed through the following equation, with \texttt{Rarity} being COMMON, UNCOMMON, RARE, or LEGENDARY: \\ \\ 
+
+\texttt{<Rarity> Drop Chance Per Item = Base <Rarity> Drop Chance / Number of <Rarity> Items} \\ \\
+
+\textbf{Exercise 1.} This exercise demonstrates the formulae with a test case of 8 COMMON, 6 UNCOMMON, 4 RARE, and 2 LEGENDARY items.
+
+\begin{center}
+	\begin{tabular}{|l||l|l|l|l|}
+		\hline
+		Rarity    & Weight & Count & Quotient      & Drop Chance Per Item \\
+		\hline
+		COMMON    & 0.755  & 8     & 0.094375      & 9.44\%               \\
+		UNCOMMON  & 0.220  & 6     & 0.03666666666 & 3.67\%               \\
+		RARE      & 0.020  & 4     & 0.005         & 0.50\%               \\
+		LEGENDARY & 0.005  & 2     & 0.0025        & 0.25\%               \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Normalization}
+
+Normalization refers to the division of the available values in order that rarity weights of all items within a table fall between zero (0) and one (1) in order to amount to the latter. Normalization occurs when at least one of the rarity weights is not present within a \texttt{DropTable} or \texttt{MissionDeck}. \\
+
+\textbf{Exercise 1.} This exercise demonstrates the normalization procedure with a test case of 1 COMMON, 1 UNCOMMON, 1 RARE, and 0 LEGENDARY items. The value of any rarity weight that does not exist within a table is zero (0).
+
+\begin{center}
+	\begin{tabular}{|l||l|l|l|}
+		\hline
+		Rarity    & Weight & Normalization Procedure         & Count \\
+		\hline
+		COMMON    & 0.755  & 0.755 / (0.755 + 0.220 + 0.020) & 1     \\
+		UNCOMMON  & 0.220  & 0.220 / (0.755 + 0.220 + 0.020) & 1     \\
+		RARE      & 0.020  & 0.020 / (0.755 + 0.220 + 0.020) & 1     \\
+		LEGENDARY & 0      & 0 / (0.755 + 0.220 + 0.020)     & 0     \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{|l||l|}
+		\hline
+		Quotient      & Drop Chance Per Item \\
+		\hline
+		0.75879396984 & 75.88\%              \\
+		0.22110552763 & 22.11\%              \\
+		0.02010050251 & 2.01\%               \\
+		0             & 0.00\%               \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Attenuation}
+
+Attenuation is a variable exclusive to \texttt{DropTables}. The boolean variable \texttt{OverrideLevelAdjustedBiasAtten} determines whether attenuation is present within a \texttt{DropTable} or not. Attenuation is defined as “the reduction of the force, effect, or value of something.” As the value of attenuation increases, the drop chance of the item it impacts \textit{should} decrease. However, due to the insignificance of its set value (0.5) and the fact that it impacts \texttt{DropTables} globally rather than individually across items, it is impossible to determine if it has a noticeable function at all.
+
+\section{Bias}
+
+Bias is a variable exclusive to \texttt{DropTables}. Bias is applied to individual items within \texttt{DropTables}. Bias is defined as “a feature of a statistical technique or of its results whereby the expected value of the results differs from the true underlying quantitative parameter being estimated.” The intended purpose of bias is to unequally weigh items within \texttt{DropTables} (through a positive (+) or negative (-) value change), even if said items have identical rarity weights. In Warframe, as the value of bias increases, the drop chance of an item decreases. Additionally, because bias scales from the rarity weight that the item it is impacting is assigned to, items with rarity weights of a higher value will be reduced more drastically, depending on the amount of bias which is present. This is evident from the following tables:
+
+\begin{center}
+	\begin{tabular}{|l||l|l|l||l|}
+		\hline
+		Feyarch Specter \\
+		\hline
+		Mod              & Drop Chance & Bias & Count & Observed \\
+		\hline
+		Shotgun Amp      & 45.83\%     & 0.05 & 22    & 52.38\%  \\
+		Empowered Blades & 4.17\%      & 0    & 3     & 7.14\%   \\
+		Final Harbinger  & 45.83\%     & 0.1  & 14    & 33.33\%  \\
+		High Noon        & 4.17\%      & 0    & 3     & 7.14\%   \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{|l||l|l|l||l|}
+		\hline
+		Knave Specter \\
+		\hline
+		Mod             & Drop Chance & Bias & Count & Observed \\
+		\hline
+		Pistol Amp      & 45.83\%     & 0.05 & 60    & 53.57\%  \\
+		Growing Power   & 4.17\%      & 0    & 4     & 3.57\%   \\
+		Blind Justice   & 45.83\%     & 0.1  & 43    & 38.39\%  \\
+		Crimson Dervish & 4.17\%      & 0    & 5     & 4.46\%   \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{|l||l|l|l||l|}
+		\hline
+		Orphid Specter \\
+		\hline
+		Mod             & Drop Chance & Bias & Count & Observed \\
+		\hline
+		Stand United    & 30.56\%     & 0.05 & 29    & 27.62\%  \\
+		Brief Respite   & 30.56\%     & 0    & 51    & 48.57\%  \\
+		Atlantis Vulcan & 30.56\%     & 0.1  & 17    & 16.19\%  \\
+		Crossing Snakes & 8.33\%      & 0    & 8     & 7.62\%   \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Reward Seeds}
+
+\texttt{rewardSeed} is a variable exclusive to \texttt{MissionDecks} and its function is to determine the \texttt{missionReward} players receive at the end of a mission. \texttt{rewardSeeds} are given to the host and members of the host’s group receive the \texttt{sessionId} in order to participate in the same session. You will only receive a \texttt{rewardSeed} when your client needs to distribute it to players in a group (as the host). This means that you will receive a \texttt{rewardSeed} if you begin a Public, Friends Only, or Invite Only session, but if you begin a Solo session, you will not be given a \texttt{rewardSeed}. Despite the \texttt{SRand} variable (the seeding for the random number generator which generates a pseudo-random integer between 0 and RAND\_MAX) being different for each player, each player will always receive the same \texttt{missionReward} as the host because of their identical \texttt{sessionIds}.
+
+\section{Sample Code}
+
+\subsection{Random Seed Generator}
+
+This generates text simulations of an integer seeded by an SRand variable based upon time. The following is my implementation in C:
+
+\begin{verbatim}
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h>
+    
+    int main ()
+    {
+      int n = 0;
+      printf ("       NULL SRand:\t %d\n", rand ());
+      srand (time (0));
+      for (n = 0; n <= 5; n++)
+        {
+          printf ("SRand seeded with:\t %d\n", rand ());
+        }
+      return 0;
+    }
+\end{verbatim}
+
+\subsection{Weighted Random Number Generator}
+
+This generates text simulations of weighted random number generation based upon one million (1000000) instances. Initial values are set in order that it emulates the Warframe random number generation algorithm. The following is my implementation in PHP:
+
+\begin{verbatim}
+    <?php
+    function WarframeRNG() {
+        $Uncommon = 0.22 * 1000;
+        $Rare = 0.02 * 1000;
+        $Legendary = 0.005 * 1000;
+        $RarityClass = array();
+        for ($i = 0; $i <= 1000; $i++) {
+            if ($i <= $Legendary) {
+                $RarityClass[$i] = "LEGENDARY";
+            } else if ($i <= $Legendary + $Rare) {
+                $RarityClass[$i] = "RARE";
+            } else if ($i <= $Legendary + $Rare + $Uncommon) {
+                $RarityClass[$i] = "UNCOMMON";
+            } else {
+                $RarityClass[$i] = "COMMON";
+            }
+        }
+        $Rarity = mt_rand(1, 1000);
+        return ($RarityClass);
+    }
+    $RarityArray = WarframeRNG();
+    $i = 0;
+    $CommonDrop = 0;
+    $UncommonDrop = 0;
+    $RareDrop = 0;
+    $LegendaryDrop = 0;
+    $times_to_run = 1000000;
+    $array = array();
+    while ($i++ < $times_to_run) {
+        $RarityClass = $RarityArray[mt_rand(1, 1000)];
+        if ($RarityClass == "COMMON") {
+            $CommonDrop = $CommonDrop + 1;
+        } else if ($RarityClass == "UNCOMMON") {
+            $UncommonDrop = $UncommonDrop + 1;
+        } else if ($RarityClass == "RARE") {
+            $RareDrop = $RareDrop + 1;
+        } else if ($RarityClass == "LEGENDARY") {
+            $LegendaryDrop = $LegendaryDrop + 1;
+        }
+    }
+    echo "COMMON: " . $CommonDrop . ", ";
+    echo "UNCOMMON: " . $UncommonDrop . ", ";
+    echo "RARE: " . $RareDrop . ", ";
+    echo "LEGENDARY: " . $LegendaryDrop;
+    ?>
+\end{verbatim}
+
+\end{document}
