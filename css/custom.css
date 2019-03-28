@@ -118,7 +118,8 @@
 	text-decoration: underline
 }
 .menubar {
-	background-color: #333333
+	background-color: #333333;
+	width: 100%
 }
 .mainmenu {
 	color: #ffffff;
