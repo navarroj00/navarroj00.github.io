@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="010 Editor is a professional text/hex editor. In this paper I disclose how to patch it in order that one is able to use it freely. This paper is for educational purposes only and I do not encourage software cracking, and thus I will not be updating it upon further releases of the product. If you find this software helpful, then consider purchasing it instead." name="description">
+    <meta content="Jordan Navarro,Carleton College" name="keywords">
+    <meta content="Jordan Navarro" name="author">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Jordan Navarro | Publications --> Patching 010 Editor Version 9.0.1</title>
+    <link href="img/icon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">Jordan M. Navarro</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li>
+                        <a href="miscellaneous.html">Miscellaneous</a>
+                    </li>
+                    <li>
+                        <a href="resume/Jordan_Navarro_Resume.pdf">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p><img src="img/user.png" width="50px" height="50px">
+                        <ba>Jordan Navarro</ba>
+                    </p>
+                    <p>
+                        <bd>March 26, 2019</bd>
+                    </p>
+                    <h3 align="center">Patching 010 Editor Version 9.0.1</h3>
+                    <hr>
+                    <h4 align="center">Disclaimer</h4>
+                    <p>This document is maintained for educational purposes only. Any material on this document may not be reproduced, retransmitted, or redisplayed other than for personal or educational use.</p>
+                    <h4 align="center">Introduction</h4>
+                    <p>A patch is a software update comprised of code which is inserted into the code of an executable program. The process of patching is utilized to make modifications to programs.</p>
+                    <h4 align="center">Instructions</h4>
+                    <p>The following is a list of instructions required to patch 010 Editor Version 9.0.1 on the Windows 64-bit platform:</p>
+                    <p>1) Visit <a href=" https://www.sweetscape.com/download/010editor/"> https://www.sweetscape.com/download/010editor/</a> and left-click on the download address.</p>
+                    <p>2) Head to the location of the completed download and run the 010 Editor Setup. Install 010 Editor.</p>
+                    <p>3) Head to the location of the installed 010 Editor application. Create a copy of the application and paste it in a directory besides that of the original installation. This copy will be the experimental application.</p>
+                    <p>4) Visit <a href="https://hexed.it">https://hexed.it</a> and left-click on "Open file". After the File Explorer initializes, double-click on the copy of the application. The application will load within the website.</p>
+                    <p>5) The base hexadecimal string for the function that we desire to patch is <code>0xFF83F82D0F84CB</code>. Paste this hexadecimal string into the "Search for" text field under the "Search" header. Left-click on the "Search now" button to begin searching for viable entries - in this case, one entry appears: <code>0x00B23B09</code>. Double-click on this entry to be sent to its position within the application. We will need to modify the hexadecimal string in order to patch the function.</p>
+                    <p>6) Our objective is to now nullify the function in its entirety. We will do this by replacing <code>0xFF83F82D0F84CB</code> with <code>0xFF83F82D0F85CB</code>. After overwriting the original string, left-click on "Export". The patched application should be downloaded onto your computer. Right-click on this application and left-click on "Cut". Return to the location of the original, unmodified application installation and paste it into the same directory. A prompt will appear and you should left-click on "Replace the file in the destination". After the original application has been replaced with your patched version, run the application to verify its success.</p>
+                    <p>7) You should be able to see that you now have a "0 User License", an unlimited day user license. Since SweetScape Software Inc periodically contacts its software license server to verify the legitimacy of the license, you will need to kill any possible connections to it in order to not lose access to the application.</p>
+                    <p>8) Open <b>C:\Windows\System32\drivers\etc\hosts</b> in a text editor. Add two new lines to the file and write <b>127.0.0.1 sweetscape.com</b> on the first line and <b>127.0.0.1 www.sweetscape.com</b> on the second line. This will redirect any attempted connections made from the application to the server to your local machine.</p>
+                    <hr>
+                    <p><a href="publications.html">Publications</a></p>
+                    <p align="center" class="copyright">Copyright &copy;
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear())
+                        </script> Jordan Navarro. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Contact</h4>
+                    <p>Email Address: navarroj@carleton.edu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
