@@ -41,10 +41,16 @@
 	padding-top: 60px;
 }
 
+#misc-fun-facts p {
+	font-size: 16px;
+	line-height: 8px;
+	margin-bottom: 20px;
+}
+
 #misc-ww {
 	background-color: #FFF;
 	padding-bottom: 0;
-	padding-top: 20px;
+	padding-top: 0;
 }
 
 #white {
