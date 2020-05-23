@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="Official website of Jordan Navarro." name="description" />
+        <meta content="Carleton College, Jordan Navarro" name="keywords" />
+        <meta content="Jordan Navarro" name="author" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Jordan Navarro | Patching Sublime Text 3 Build 3176</title>
+        <link href="img/VoiDGlitch.png" rel="icon" />
+        <link href="img/VoiDGlitchAppleTouchIcon.png" rel="apple-touch-icon" />
+        <link href="css/pygment_trac.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1 style="text-align: center;">Jordan Navarro</h1>
+                <img src="img/JordanNavarro.png" class="center" width="82.5%" />
+                <br />
+                <h2 style="font-weight: 400; text-align: center;"><a href="index.html">Home</a></h2>
+                <h2 style="font-weight: 400; text-align: center;"><a href="posts.html">Posts</a></h2>
+                <h2 style="font-weight: 400; text-align: center;"><a href="projects.html">Projects</a></h2>
+                <h2 style="font-weight: 400; text-align: center;"><a href="resources.html">Resources</a></h2>
+            </header>
+            <section>
+                <h2>Patching Sublime Text 3 Build 3176</h2>
+                <h4>March 26, 2019</h4>
+                <hr />
+                <h3>Disclaimer</h3>
+                <p>This webpage is maintained for educational purposes only. Any material on this webpage may not be reproduced, retransmitted, or redisplayed other than for personal or educational use.</p>
+                <h3>Introduction</h3>
+                <p>A patch is a set of changes to a computer program or its supporting data. Patching makes possible the modification of programs when the source code is unavailable.</p>
+                <h3>Instructions</h3>
+                <p>The following is a list of instructions required to patch Sublime Text 3 Build 3176 on the Windows 64-bit platform:</p>
+                <p>1) Visit <a href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a> and left-click on the download address.</p>
+                <p>2) Head to the location of the completed download and run the Sublime Text Installer. Install Sublime Text 3.</p>
+                <p>
+                    3) Head to the location of the installed Sublime Text application. Create a copy of the application and paste it in a directory besides that of the original installation. This copy will be the experimental application.
+                </p>
+                <p>4) Visit <a href="https://hexed.it">https://hexed.it</a> and left-click on "Open file". After the File Explorer initializes, double-click on the copy of the application. The application will load within the website.</p>
+                <p>
+                    5) The base hexadecimal string for the function that we desire to patch is <code>0x8038007467488D05</code>. Paste this hexadecimal string into the "Search for" text field under the "Search" header. Left-click on the
+                    "Search now" button to begin searching for viable entries—in this case, one entry appears: <code>0x0003A072</code>. Double-click on this entry to be sent to its position within the application. We will need to modify
+                    the hexadecimal string in order to patch the function.
+                </p>
+                <p>
+                    6) Our objective is to now nullify the function in its entirety. We will do this by replacing <code>0x8038007467488D05</code> with <code>0xC600019090488D05</code>. After overwriting the original string, left-click on
+                    "Export". The patched application should be downloaded onto your computer. Right-click on this application and left-click on "Cut". Return to the location of the original, unmodified application installation and paste it
+                    into the same directory. A prompt will appear and you should left-click on "Replace the file in the destination". After the original application has been replaced with your patched version, run the application to verify
+                    its success.
+                </p>
+                <p>7) It will appear that you were not successful, but this is not the case; ignore the "(UNREGISTERED)" text.</p>
+                <p>
+                    8) Open <b>C:\Windows\System32\drivers\etc\hosts</b> in a text editor. Add five new lines to the file and write <b>127.0.0.1 sublimetext.com</b> on the first line, <b>127.0.0.1 www.sublimetext.com</b> on the second line,
+                    <b>127.0.0.1 sublimehq.com</b> on the third line, <b>127.0.0.1 telemetry.sublimehq.com</b> on the fourth line, and <b>127.0.0.1 license.sublimehq.com</b> on the fifth line. This will redirect any attempted connections
+                    made from the application to the server to your local machine.
+                </p>
+            </section>
+            <footer>
+                <p style="line-height: 1.2; text-align: center;">
+                    <small>
+                        Theme adapted from <a href="https://orderedlist.com/minimal/">Minimal</a> by <a href="https://github.com/orderedlist">orderedlist</a>. Copyright &copy;
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                        Jordan Navarro. All rights reserved.
+                    </small>
+                </p>
+            </footer>
+        </div>
+        <script src="js/scale.fix.js"></script>
+    </body>
+</html>
