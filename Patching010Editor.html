@@ -9,8 +9,7 @@
         <title>Jordan Navarro | Patching 010 Editor Version 9.0.1</title>
         <link href="img/VoiDGlitch.png" rel="icon" />
         <link href="img/VoiDGlitchAppleTouchIcon.png" rel="apple-touch-icon" />
-        <link href="css/pygment_trac.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/stylesheet.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
     </head>
 
@@ -41,8 +40,8 @@
                 <p>4) Visit <a href="https://hexed.it">https://hexed.it</a> and left-click on "Open file". After the File Explorer initializes, double-click on the copy of the application. The application will load within the website.</p>
                 <p>
                     5) The base hexadecimal string for the function that we desire to patch is <code>0xFF83F82D0F84CB</code>. Paste this hexadecimal string into the "Search for" text field under the "Search" header. Left-click on the
-                    "Search now" button to begin searching for viable entries—in this case, one entry appears: <code>0x00B23B09</code>. Double-click on this entry to be sent to its position within the application. We will need to modify
-                    the hexadecimal string in order to patch the function.
+                    "Search now" button to begin searching for viable entries—in this case, one entry appears: <code>0x00B23B09</code>. Double-click on this entry to be sent to its position within the application. We will need to modify the
+                    hexadecimal string in order to patch the function.
                 </p>
                 <p>
                     6) Our objective is to now nullify the function in its entirety. We will do this by replacing <code>0xFF83F82D0F84CB</code> with <code>0xFF83F82D0F85CB</code>. After overwriting the original string, left-click on
