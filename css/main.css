@@ -4,6 +4,13 @@ body {
 	padding-top: 56px;
 }
 
+pre code {
+    background: #F8F8F8;
+    border: 1px solid #E5E5E5;
+	display: block;
+	overflow-x: auto;
+}
+
 table td, th {
 	border-right: 1px solid #000000;
 	text-align: center;
@@ -14,13 +21,6 @@ table tr {
 	border-bottom: 1px solid #000000;
 	border-left: 1px solid #000000;
 	border-width: thin;
-}
-
-pre code {
-    background: #F8F8F8;
-    border: 1px solid #E5E5E5;
-	display: block;
-	overflow-x: auto;
 }
 
 .center {
