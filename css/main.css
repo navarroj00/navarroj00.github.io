@@ -1,0 +1,98 @@
+body {
+	background-color: #FFFFFF;
+	font-family: "Raleway", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	padding-top: 56px;
+}
+
+table td, th {
+	border-right: 1px solid #000000;
+	text-align: center;
+}
+
+table tr {	
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-width: thin;
+}
+
+pre code {
+    background: #F8F8F8;
+    border: 1px solid #E5E5E5;
+	display: block;
+	overflow-x: auto;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.maroon-background {
+	background-color: #800000;
+}
+
+/* Link Styling */
+
+a {
+	color: #800000;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #800000;
+}
+
+a:hover {
+	color: #000000;
+}
+
+/* Publication Reference Formatting */
+
+.publication {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+.publication-title {
+	font-weight: bold;
+}
+
+.publication-venue {
+	font-style: italic;
+}
+
+/* Abstract Button Formatting */
+
+.abstract-box {
+	background-color: #D3D3D3;
+	padding: 0.25em;
+	margin: 0.25em;
+}
+
+.btn {
+	font-weight: normal;
+	border: none;
+	padding: 0px;
+}
+
+.btn-primary, .btn-primary:focus {
+	background-color: #FFFFFF;
+	color: #800000;
+	outline: 0;
+}
+
+.btn-primary:hover {
+	background-color: #800000;
+	color: #FFFFFF;
+	outline: 0;
+	box-shadow: none;
+}
+
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover {
+	background-color: #000000;
+	color: #FFFFFF;
+	outline: 0;
+}
