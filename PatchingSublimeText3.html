@@ -2,108 +2,128 @@
 <html lang="en">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-05BGM42RH8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  gtag('config', 'G-05BGM42RH8');
-</script>
-	<meta charset="utf-8" />
-	<meta name="author" content="Jordan Navarro" />
-	<meta name="description" content="Patching Sublime Text 3 Build 3176 by Jordan Navarro." />
-	<meta name="keywords" content="Jordan Navarro, Sublime Text 3" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Patching Sublime Text 3 Build 3176 &mdash; Jordan Navarro</title>
-	<link href="img/VoiD_Glitch.png" rel="icon" />
-	<link href="img/VoiD_Glitch-apple-touch-icon.png" rel="apple-touch-icon" />
-	<!-- Academicons -->
-	<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet" />
-	<!-- Bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<!-- Custom CSS -->
-	<link href="css/main.css" rel="stylesheet" />
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-	<!-- Font Awesome -->
-	<script src="https://kit.fontawesome.com/261b3aaa97.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Icon -->
+    <link rel="icon" href="img/void-glitch-icon.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="img/void-glitch-apple-touch-icon.png">
+
+    <title>Patching Sublime Text 3 Build 3176 &mdash; Jordan Navarro</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-05BGM42RH8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-05BGM42RH8');
+    </script>
 </head>
 
 <body>
-	<!-- Navigation Bar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container"> <a class="navbar-brand" href="index.html">Jordan Navarro</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation"> <span class="navbar-toggler-icon"></span> </button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="posts.html">Posts</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="presentations.html">Presentations</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="publications.html">Publications</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="teaching.html">Teaching</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="press.html">Press</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="projects.html">Projects</a> </li>
-					<li class="nav-item"> <a class="nav-link" href="resources.html">Resources</a> </li>
-					<li class="nav-item">
-						<a class="nav-link" href="cv/JordanNavarroCV.pdf"> <img src="img/cv.png" alt="CV icons created by Freepik - Flaticon" height="17" width="17"></a>
-					</li>
-					<li class="nav-item"> <a class="nav-link" href="https://github.com/navarroj00"><i class="fab fa-github" aria-hidden="true"></i></a> </li>
-					<li class="nav-item"> <a class="nav-link" href="https://www.linkedin.com/in/jordannav"><i class="fab fa-linkedin" aria-hidden="true"></i></a> </li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Page Content -->
-	<div class="container">
-		<!-- Content Row -->
-		<div class="row my-4">
-			<div class="col-md-3 col-lg-2 d-none d-md-block">
-				<div class="position-fixed"> <img class="mb-4 d-md-block" src="img/JordanNavarroCircle.png" height="125" width="125"> <small>
-                     <p><b>Jordan Navarro</b>
-                        <br />
-                        Ph.D. Student
-                        <br />
-                        <a href="https://illinois.edu/">University of Illinois
-						<br />
-						Urbana-Champaign</a>
-                        <br />
-                        <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#106;&#109;&#110;&#53;&#64;&#105;&#108;&#108;&#105;&#110;&#111;&#105;&#115;&#46;&#101;&#100;&#117;">&#106;&#109;&#110;&#53;&#64;&#105;&#108;&#108;&#105;&#110;&#111;&#105;&#115;&#46;&#101;&#100;&#117;</a>
-                     </p>
-                  </small> </div>
-			</div>
-			<div class="col-md-9 col-lg-10 col-sm-12">
-				<h2>Patching Sublime Text 3 Build 3176</h2>
-				<p>March 26, 2019</p>
-				<hr />
-				<h5><b>Disclaimer</b></h5>
-				<p>The information included in this post is for educational purposes only. Any material on this webpage may not be reproduced, retransmitted, or redisplayed other than for personal or educational use.</p>
-				<h5><b>Introduction</b></h5>
-				<p>A patch is a set of changes to a computer program or its supporting data. Patching makes possible the modification of programs when the source code is unavailable.</p>
-				<h5><b>Instructions</b></h5>
-				<p>The following is a list of instructions required to patch Sublime Text 3 Build 3176 on the Windows 64-bit platform:</p>
-				<p>1. Visit <a href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a> and left-click on the download address.</p>
-				<p>2. Head to the location of the completed download and run the Sublime Text Installer. Install Sublime Text 3.</p>
-				<p>3. Head to the location of the installed Sublime Text application. Create a copy of the application and paste it in a directory besides that of the original installation. This copy will be the experimental application.</p>
-				<p>4. Visit <a href="https://hexed.it/">https://hexed.it/</a> and left-click on "Open file". After the File Explorer initializes, double-click on the copy of the application. The application will load within the website.</p>
-				<p>5. The base hexadecimal string for the function that we desire to patch is <code>0x8038007467488D05</code>. Paste this hexadecimal string into the "Search for" text field under the "Search" header. Left-click on the "Search now" button to begin searching for viable entries. In this case, one entry appears: <code>0x0003A072</code>. Double-click on this entry to be sent to its position within the application. We will need to modify the hexadecimal string in order to patch the function.</p>
-				<p>6. Our objective is to now nullify the function in its entirety. We will do this by replacing <code>0x8038007467488D05</code> with <code>0xC600019090488D05</code>. After overwriting the original string, left-click on "Export". The patched application should be downloaded onto your computer. Right-click on this application and left-click on "Cut". Return to the location of the original, unmodified application installation and paste it into the same directory. A prompt will appear and you should left-click on "Replace the file in the destination". After the original application has been replaced with your patched version, run the application to verify its success.</p>
-				<p>7. It will appear that you were not successful, but this is not the case. Ignore the "(UNREGISTERED)" text.</p>
-				<p>8. Open <b>C:\Windows\System32\drivers\etc\hosts</b> in a text editor. Add five new lines to the file and write <b>127.0.0.1 sublimetext.com</b> on the first line, <b>127.0.0.1 www.sublimetext.com</b> on the second line, <b>127.0.0.1 sublimehq.com</b> on the third line, <b>127.0.0.1 telemetry.sublimehq.com</b> on the fourth line, and <b>127.0.0.1 license.sublimehq.com</b> on the fifth line. This will redirect any attempted connections made from the application to the server to your local machine.</p>
-			</div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <a class="navbar-brand" href="index.html">Jordan Navarro</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posts.html">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="presentations.html">Presentations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teaching.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv/JordanNavarroCV.pdf"><i class="fa-solid fa-file" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/navarroj00"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/jordannav"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <!-- Page Content -->
+   <div class="container">
+    <!-- Heading Row -->
+    <div class="row mx-4 my-4">
+        <!-- Main Text Positioning Column -->
+        <div class="col-md-2"> </div>
+        <!-- Main Text Content Column -->
+        <div class="col-md-8">
+            <h2>Patching Sublime Text 3 Build 3176</h2>
+            <p>March 26, 2019</p>
+            <hr />
+            <h5><b>Disclaimer</b></h5>
+            <p>The information included in this post is for educational purposes only. Any material on this webpage may not be reproduced, retransmitted, or redisplayed other than for personal or educational use.</p>
+            <h5><b>Introduction</b></h5>
+            <p>A patch is a set of changes to a computer program or its supporting data. Patching makes possible the modification of programs when the source code is unavailable.</p>
+            <h5><b>Instructions</b></h5>
+            <p>The following is a list of instructions required to patch Sublime Text 3 Build 3176 on the Windows 64-bit platform:</p>
+            <p>1. Visit <a href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a> and left-click on the download address.</p>
+            <p>2. Head to the location of the completed download and run the Sublime Text Installer. Install Sublime Text 3.</p>
+            <p>3. Head to the location of the installed Sublime Text application. Create a copy of the application and paste it in a directory besides that of the original installation. This copy will be the experimental application.</p>
+            <p>4. Visit <a href="https://hexed.it/">https://hexed.it/</a> and left-click on "Open file". After the File Explorer initializes, double-click on the copy of the application. The application will load within the website.</p>
+            <p>5. The base hexadecimal string for the function that we desire to patch is <code>0x8038007467488D05</code>. Paste this hexadecimal string into the "Search for" text field under the "Search" header. Left-click on the "Search now" button to begin searching for viable entries. In this case, one entry appears: <code>0x0003A072</code>. Double-click on this entry to be sent to its position within the application. We will need to modify the hexadecimal string in order to patch the function.</p>
+            <p>6. Our objective is to now nullify the function in its entirety. We will do this by replacing <code>0x8038007467488D05</code> with <code>0xC600019090488D05</code>. After overwriting the original string, left-click on "Export". The patched application should be downloaded onto your computer. Right-click on this application and left-click on "Cut". Return to the location of the original, unmodified application installation and paste it into the same directory. A prompt will appear and you should left-click on "Replace the file in the destination". After the original application has been replaced with your patched version, run the application to verify its success.</p>
+            <p>7. It will appear that you were not successful, but this is not the case. Ignore the "(UNREGISTERED)" text.</p>
+            <p>8. Open <b>C:\Windows\System32\drivers\etc\hosts</b> in a text editor. Add five new lines to the file and write <b>127.0.0.1 sublimetext.com</b> on the first line, <b>127.0.0.1 www.sublimetext.com</b> on the second line, <b>127.0.0.1 sublimehq.com</b> on the third line, <b>127.0.0.1 telemetry.sublimehq.com</b> on the fourth line, and <b>127.0.0.1 license.sublimehq.com</b> on the fifth line. This will redirect any attempted connections made from the application to the server to your local machine.</p>
+            </div>
 		</div>
 	</div>
-	<!-- Footer -->
-	<p style="text-align: center"> <small>
+    <!-- Footer -->
+    <p style="text-align: center"> <small>
             Copyright &copy;
             <script type="text/javascript">
-               document.write(new Date().getFullYear());
+                document.write(new Date().getFullYear());
             </script>
             Jordan Navarro. All rights reserved.
-         </small> </p>
-	<!-- Bootstrap JavaScript -->
-	<script src="js/bootstrap.bundle.min.js"></script>
+        </small></p>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

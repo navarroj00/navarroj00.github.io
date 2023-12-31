@@ -1,0 +1,183 @@
+body {
+	background-color: white;
+	font-family: 'Quicksand', sans-serif;
+	padding-top: 50px; /* Account for the fixed-top positioning of the navigation bar */
+}
+
+/* Style for hyperlinks */
+
+a {
+	color: #800000;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #800000;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Style for navbar hyperlinks */
+
+/* Style for navbar-brand */
+.navbar-dark .navbar-nav .navbar-brand {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .navbar-brand:hover {
+    color: white;
+	text-decoration: none;
+}
+
+/* Style for nav-link */
+.navbar-dark .navbar-nav .nav-link {
+    color: #AAAAAA;
+    text-decoration: none;
+}
+
+.navbar-dark .nav-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for the scrollable news section */
+.scrollable-news {
+	max-height: 200px; /* Set a maximum height for the scrollable news section */
+	overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+/* Style for the news items */
+.scrollable-news ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.scrollable-news ul li {
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+/* Style for the news items' dates */
+.scrollable-news .news-date {
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+/* Style for tables */
+table td, th {
+	border-right: 1px solid #000000;
+	text-align: center;
+}
+
+table tr {	
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-width: thin;
+}
+
+/* Style for posts */
+
+.post {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+.post-title {
+	font-weight: bold;
+}
+
+/* Style for code blocks */
+
+pre code {
+    background: #F8F8F8;
+    border: 1px solid #E5E5E5;
+	display: block;
+	overflow-x: auto;
+}
+
+/* Style for presentations */
+
+.presentation {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+.presentation-title {
+	font-weight: bold;
+}
+
+.presentation-venue {
+	font-style: italic;
+}
+
+/* Style for the abstract button */
+
+.abstract-box {
+	background-color: #D3D3D3;
+	padding-left: 0.20em;
+}
+
+.btn {
+	font-weight: normal;
+	border: none;
+	padding: 0px;
+}
+
+.btn-primary, .btn-primary:focus {
+	background-color: #FFFFFF;
+	color: #800000;
+	outline: 0;
+}
+
+.btn-primary:hover {
+	background-color: #800000;
+	color: #FFFFFF;
+	outline: 0;
+	box-shadow: none;
+}
+
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover {
+	background-color: #800000;
+	color: #FFFFFF;
+	outline: 0;
+}
+
+/* Style for publications */
+
+.publication {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+/* Style for teaching items */
+
+.teaching {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+.teaching-title {
+	font-weight: bold;
+}
+
+/* Style for miscellaneous items */
+
+.miscellaneous {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: 2em;
+}
+
+.miscellaneous-title {
+	font-weight: bold;
+}
