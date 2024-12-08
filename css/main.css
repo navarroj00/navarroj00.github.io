@@ -1,0 +1,219 @@
+/* Global box-sizing for consistent border and padding management */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Body styles */
+body {
+	font-family: "Crimson Pro", sans-serif;
+	padding-top: 6rem;
+	/* Add top padding to account for fixed navbar */
+}
+
+a {
+	color: #000;
+	text-decoration: underline;
+	text-decoration-color: #355E3B;
+}
+
+a:hover {
+	color: #355E3B;
+}
+
+/* Container styles */
+.container {
+	margin: 0 auto;
+	/* Center horizontally */
+	max-width: 650px;
+	/* Ensure that ".container" will never be wider than 650 pixels */
+}
+
+/* Navbar styles */
+.navbar {
+	background-color: #fff;
+	border-bottom: 0.5px solid #ccc;
+}
+
+.navbar .brand-name {
+	font-size: 30px;
+	font-weight: 550;
+	margin-left: -6px;
+	/* Adjust left margin of navigation bar brand name */
+}
+
+.navbar .brand-name:hover {
+	text-decoration: none;
+}
+
+.navbar a {
+	font-size: 17px;
+	padding: 10px;
+}
+
+.nav-item {
+	margin-top: 5px;
+	/* Move navigation items downward */
+}
+
+.nav-link {
+	color: #000;
+}
+
+.nav-link:hover {
+	color: #000;
+	text-decoration: underline;
+	text-decoration-color: #355E3B;
+}
+
+.nav-link i {
+	color: inherit;
+}
+
+.nav-link:hover i {
+	color: #355E3B;
+}
+
+/* Button styles */
+.button-container {
+	display: flex;
+	gap: 5px;
+}
+
+.button {
+	border: 1px solid #000;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	margin-bottom: 20px;
+	/* Add vertical space between button and content below it */
+	margin-top: -12.5px;
+	/* Reduce vertical space between button and content above it */
+	padding: 1px 8px;
+	text-decoration: none;
+	transition: border-color 0.3s ease;
+	width: fit-content;
+}
+
+.button:hover {
+	border-color: #355E3B;
+}
+
+/* Presentation and abstract button styles */
+.presentation {
+	margin-bottom: 20px;
+	/* Add vertical space between presentation and content below it */
+}
+
+.presentation-title {
+	font-weight: bold;
+}
+
+.presentation-venue {
+	font-style: italic;
+}
+
+.abstract-button {
+	border: 1px solid #000;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	padding: 1px 8px;
+	text-decoration: none;
+	transition: border-color 0.3s ease;
+	width: fit-content;
+}
+
+.abstract-button:hover {
+	border-color: #355E3B;
+	color: #355E3B;
+}
+
+.abstract-content {
+	background-color: #F7F7F7;
+	border: 1px solid #ddd;
+	display: none;
+	margin-top: 5px;
+	/* Add vertical space between abstract content and abstract button */
+	padding: 5px;
+}
+
+.abstract-content.show {
+	display: block;
+}
+
+/* Teaching and course description button styles */
+.teaching-appointment {
+	margin-bottom: 20px;
+	/* Add vertical space between teaching appointment and content below it */
+}
+
+.course-title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.appointment-role {
+	font-size: 18px;
+}
+
+.appointment-term {
+	font-size: 18px;
+}
+
+.course-description-button {
+	border: 1px solid #000;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	padding: 1px 8px;
+	text-decoration: none;
+	transition: border-color 0.3s ease;
+	width: fit-content;
+}
+
+.course-description-button:hover {
+	border-color: #355E3B;
+	color: #355E3B;
+}
+
+.course-description {
+	background-color: #F7F7F7;
+	border: 1px solid #ddd;
+	display: none;
+	margin-top: 5px;
+	/* Add vertical space between course description and course description button */
+	padding: 5px;
+}
+
+.course-description.show {
+	display: block;
+}
+
+/* Footer styles */
+.footer {
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Media queries */
+/* Extra small device styles */
+@media screen and (max-width: 575.98px) {
+	body {
+		padding-top: 8rem;
+		/* Add top padding to account for fixed navbar */
+	}
+
+	.navbar .container {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.nav-item {
+		margin-top: -15px;
+		/* Reduce vertical space between navigation items and content above it */
+	}
+}
