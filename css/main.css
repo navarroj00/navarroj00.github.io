@@ -7,7 +7,11 @@
 
 /* Body styles */
 body {
+	display: flex;
+	flex-direction: column;
 	font-family: "Crimson Pro", sans-serif;
+	min-height: 100vh;
+	/* Ensure that body takes up full height of viewport */
 	padding-top: 6rem;
 	/* Add top padding to account for fixed navbar */
 }
@@ -22,12 +26,18 @@ a:hover {
 	color: #355E3B;
 }
 
+/* Wrapper for navbar and main content */
+.wrapper {
+	flex-grow: 1;
+	/* Ensure that wrapper grows and takes up available space */
+}
+
 /* Container styles */
 .container {
 	margin: 0 auto;
 	/* Center horizontally */
 	max-width: 650px;
-	/* Ensure that ".container" will never be wider than 650 pixels */
+	/* Ensure that container will never be wider than 650 pixels */
 }
 
 /* Navbar styles */
